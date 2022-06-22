@@ -1,0 +1,13 @@
+{
+  "name": "DataTables-extension-2.0",
+  "version": "2.0.0",
+  "description": "Updating extension developed by Toan Hoang and adding additional functionality",
+  "main": "index.js",
+  "repository": "https://github.com/gonzo-p/Tableau-DataTables-Extension-2.0",
+  "author": "Peter Gonzalez",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "jquery": "^3.6.0"
+  }
+}
