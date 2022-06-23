@@ -5,7 +5,7 @@
     // Initialises Tableau Data Extension
     tableau.extensions.initializeAsync().then(function () {
         refresh();
-    }, function () { console.log('Error while Initializing: ' + err.toString()); });
+    }, function () { console.log('Error while Initializing: '); });
   });
  
   function refresh() {
