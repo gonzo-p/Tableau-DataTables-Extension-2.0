@@ -12,7 +12,29 @@ chart.js@^3.8.0:
   resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-3.8.0.tgz#c6c14c457b9dc3ce7f1514a59e9b262afd6f1a94"
   integrity sha512-cr8xhrXjLIXVLOBZPkBZVF6NDeiVIrPLHcMhnON7UufudL+CNeRrD+wpYanswlm8NpudMdrt3CHoLMQMxJhHRg==
 
+jquery-sortable@^0.9.13:
+  version "0.9.13"
+  resolved "https://registry.yarnpkg.com/jquery-sortable/-/jquery-sortable-0.9.13.tgz#1cbfb655013a0747370571f06e22f524a00ffba2"
+  integrity sha512-AlWotHQnKOAJLRfmbsv0iHcmTB6v6ZsCJ3MvIFaiqJ4Lcpuo8z2w+orAEo6SSP7sLfvhMegM0Oy+I3p20qUO+g==
+  dependencies:
+    jquery "^2.1.2"
+
+jquery.dataTables.min.js@^1.10.5:
+  version "1.10.5"
+  resolved "https://registry.yarnpkg.com/jquery.dataTables.min.js/-/jquery.dataTables.min.js-1.10.5.tgz#975a67967e3557a660a52166abd07a9e18291e40"
+  integrity sha512-do9iPTagRbpO7lFHoC+rrrTDlrUxjfnFROsWqKAAh1GLuvNF+2oxxlSEWMXAvtthHtIoO1RPIs/5GEC9QbmXRA==
+
+jquery@^2.1.2:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-2.2.4.tgz#2c89d6889b5eac522a7eea32c14521559c6cbf02"
+  integrity sha512-lBHj60ezci2u1v2FqnZIraShGgEXq35qCzMv4lITyHGppTnA13rwR0MgwyNJh9TnDs3aXUvd1xjAotfraMHX/Q==
+
 jquery@^3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
   integrity sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==
+
+materialize-css@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/materialize-css/-/materialize-css-1.0.0.tgz#8d5db1c4a81c6d65f3b2e2ca83a8e08daa24d1be"
+  integrity sha512-4/oecXl8y/1i8RDZvyvwAICyqwNoKU4or5uf8uoAd74k76KzZ0Llym4zhJ5lLNUskcqjO0AuMcvNyDkpz8Z6zw==

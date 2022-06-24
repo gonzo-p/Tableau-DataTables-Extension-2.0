@@ -1,17 +1,29 @@
 <html>
     <head>
-        <!-- imports the Bootstrap css files -->
+        <!-- imports the css files -->
         <link rel="stylesheet" type="text/css" href="libs/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="libs/jquery.dataTables.min.js/css/jquery.dataTables.min.css"
     </head>
     <body>
-        <div class="wrapper">
-            <canvas id="myChart" width="600" height="250"></canvas>
+        <span id="error"></span>
+        <table id="datatable">
+
+        </table>
+        <div id="configure" hide>
+            <h3>Please configure the extension</h3>
+            <ul>
+                <li>Click on the down arrow in the extension menu (look right)</li>
+                <li>Select on Configure</li>
+                <li>Check the extension details and click Allow</li>
+                <li>Choose your settings</li>
+                <li>Enjoy!!</li>
+            </ul>
         </div>
     </body>
     <!-- imports the Javascript files -->
     <script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="libs/chart.js/dist/chart.min.js"></script>
+    <script type="text/javascript" src="libs/jquery.dataTables.min.js/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="js/tableau.extensions.1.latest.min.js"></script>
-    <script type="text/javascript" src="js/application.js"></script>    
+    <script type="text/javascript" src="js/index.js"></script>    
 </html>
