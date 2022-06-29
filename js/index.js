@@ -17,7 +17,7 @@ function filterColumn(i) {
         .draw();
 }
  
-$(document).ready(function () {
+$(function () {
     $('#example').DataTable();
  
     $('input.global_filter').on('keyup click', function () {

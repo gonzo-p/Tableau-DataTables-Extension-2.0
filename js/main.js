@@ -11,8 +11,8 @@
   let unregisterFilterEventListener = null;
   let unregisterMarkSelectionEventListener = null;
   let unregisterParameterEventListener = null;
-
-  $(document).ready(function () {
+  // Updated .ready() deprecated
+  $(function () {
     // Add the configure option in the initialiseAsync to call the configure function
     // when we invoke this action on the user interface.
     tableau.extensions.initializeAsync({ 'configure': configure }).then(function () {
@@ -98,7 +98,7 @@
         // If underlying is 1 then get Underlying, else get Summary.
         if (underlying == 1) {
             
-            worksheet.getUnderlytingTablesAsync().then(function(t){
+            worksheet.getUnderlyingTablesAsync().then(function(t){
 
                 table = t;
                 const logicalTableId = t[0].id;
@@ -285,6 +285,7 @@
     var includeTableName = (tableau.extensions.settings.get('include-table-name') == 'Y' ? true : false);
 
     // add screen reader only h2
+    // Title displayed
     $('#datatable_wrapper').prepend('<h2 class="sr-only">'+sheetName+' | Data Table Extension | Tableau</h2>');
 
 

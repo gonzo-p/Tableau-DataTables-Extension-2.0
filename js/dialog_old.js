@@ -1,11 +1,10 @@
 'use strict';
 
 (function () {
-  // Updated .ready() deprecated
-  $(function () {
+
+  $(document).ready(function () {
     tableau.extensions.initializeDialogAsync().then(function (openPayload) {
       buildDialog();
-      
     });
   });
 
@@ -117,8 +116,8 @@
     $("#max_no_records").val(tableau.extensions.settings.get("max_no_records"));
     $('select').formSelect();
     $('.tabs').tabs();
-    $('#closeButton').on("click", closeDialog);
-    $('#saveButton').on("click", saveButton);
+    $('#closeButton').click(closeDialog);
+    $('#saveButton').click(saveButton);
     // $('#resetButton').click(resetButton);
   }
 
@@ -126,8 +125,6 @@
     var worksheets = tableau.extensions.dashboardContent.dashboard.worksheets;
     var worksheetName = $("#selectWorksheet").val();
     var underlying = $("#underlying").val();
-    var table;
-    
 
     // Get the worksheet object for the specified names.
     var worksheet = worksheets.find(function (sheet) {
@@ -138,27 +135,17 @@
     // look different if you have summary or underlying.
     if (underlying == 1) {
       // Note that for our purposes and to speed things up we only want 1 record.
-      worksheet.getUnderlyingTablesAsync().then(function(t) {
-        table = t;
-        
-        const logicalTableId = t[0].id;
-        
-        worksheet.getUnderlyingTableDataAsync(logicalTableId).then(function(sumdata) {
-            var worksheetColumns = sumdata.columns;
-            // This blanks out the column list
-            $("#sort-it ol").text("");
-            var counter = 1;
-            worksheetColumns.forEach(function (current_value) {
-                // For each column we add a list item with an input box and label.
-                // Note that this is based on materialisecss.
-                $("#sort-it ol").append("<li><div class='input-field'><input id='" + current_value.fieldName + "' type='text' col_num=" + counter + "><label for=" + current_value.fieldName + "'>" + current_value.fieldName + "</label></div></li>");
-                counter++;
-                
-            });
+      worksheet.getUnderlyingDataAsync({ maxRows: 1 }).then(function (sumdata) {
+        var worksheetColumns = sumdata.columns;
+        // This blanks out the column list
+        $("#sort-it ol").text("");
+        var counter = 1;
+        worksheetColumns.forEach(function (current_value) {
+          // For each column we add a list item with an input box and label.
+          // Note that this is based on materialisecss.
+          $("#sort-it ol").append("<li><div class='input-field'><input id='" + current_value.fieldName + "' type='text' col_num=" + counter + "><label for=" + current_value.fieldName + "'>" + current_value.fieldName + "</label></div></li>");
+          counter++;
         });
-
-        
-      
       });
     } else {
       // Note that for our purposes and to speed things up we only want 1 record.
@@ -172,6 +159,8 @@
           // Note that this is based on materialisecss.
           $("#sort-it ol").append("<li><div class='input-field'><input id='" + current_value.fieldName + "' type='text' col_num=" + counter + "><label for=" + current_value.fieldName + "'>" + current_value.fieldName + "</label></div></li>");
           counter++;
+            console.log("current_value");
+            console.log(current_value);
         });
       });
     }
