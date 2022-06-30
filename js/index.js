@@ -1,30 +1,22 @@
-function filterGlobal() {
-    $('#example')
-        .DataTable()
-        .search($('#global_filter').val(), $('#global_regex').prop('checked'), $('#global_smart').prop('checked'))
-        .draw();
-}
- 
-function filterColumn(i) {
-    $('#example')
-        .DataTable()
-        .column(i)
-        .search(
-            $('#col' + i + '_filter').val(),
-            $('#col' + i + '_regex').prop('checked'),
-            $('#col' + i + '_smart').prop('checked')
-        )
-        .draw();
-}
- 
 $(function () {
-    $('#example').DataTable();
+    $('#example tfoot th').each(function () {
+        var title = $(this).text();
+        $(this).html('<input type="text" placeholder="Search ' + title + '" />');})
  
-    $('input.global_filter').on('keyup click', function () {
-        filterGlobal();
-    });
- 
-    $('input.column_filter').on('keyup click', function () {
-        filterColumn($(this).parents('tr').attr('data-column'));
-    });
+        var table = $('#example').DataTable({
+            initComplete: function () {
+                // Apply the search
+                this.api()
+                    .columns()
+                    .every(function () {
+                        var that = this;
+     
+                        $('input', this.footer()).on('keyup change clear', function () {
+                            if (that.search() !== this.value) {
+                                that.search($(this).val(),$(this)).draw();
+                            }
+                        });
+                    });
+            },
+        });
 });

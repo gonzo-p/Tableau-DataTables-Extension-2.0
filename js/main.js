@@ -103,7 +103,7 @@
                 table = t;
                 const logicalTableId = t[0].id;
 
-                worksheet.getUnderlyingTableDataAsync(logicalTableId).then(function (underlying) {
+                worksheet.getUnderlyingTableDataAsync(logicalTableId, {maxRows: max_no_records} ).then(function (underlying) {
                     // We will loop through our column names from our settings and save these into an array
                     // We will use this later in our datatable function.
                     // https://tableau.github.io/extensions-api/docs/interfaces/datatable.html#columns
