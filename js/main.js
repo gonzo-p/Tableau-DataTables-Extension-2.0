@@ -245,7 +245,7 @@
                 if (print == "Y") {
                     buttons.push('print');
                 }
-    
+                
                 // If there are 1 or more Export options ticked, then we will add the dom: 'Bfrtip'
                 // Else leave this out.
                 if (buttons.length > 0) {
