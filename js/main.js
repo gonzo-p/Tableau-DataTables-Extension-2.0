@@ -31,7 +31,10 @@
         });
       });
 
-    }, function () { console.log('Error while Initializing: ' + err.toString()); });
+    }, function (err) { 
+      // Something went wrong in initialization.
+      console.log('Error while Initializing: ' + err.toString());
+    });
   });
 
   // Here is where the meat of the Extension is.
@@ -121,7 +124,7 @@
                     var tableData = makeArray(underlying.columns.length,underlying.totalRowCount);
                     for (var i = 0; i < tableData.length; i++) {
                         for (var j = 0; j < tableData[i].length; j++) {
-                            // you can get teh value or formatted value
+                            // you can get the value or formatted value
                             // https://tableau.github.io/extensions-api/docs/interfaces/datavalue.html
                             tableData[i][j] = worksheetData[i][column_order[j]-1].formattedValue;
                         }
@@ -420,6 +423,7 @@
           $item.html('Next <span class="sr-only">&nbsp;page of'+(includeTableName ? ' '+sheetName+' table' : '')+'</span>');
         }
       });
+      
     }
 
 
