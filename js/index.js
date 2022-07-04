@@ -1,6 +1,7 @@
 $(function () {
     $('#example tfoot th').each(function () {
         var title = $(this).text();
+        //console.log(title);
         $(this).html('<input type="text" placeholder="Search ' + title + '" />');
     })
  
